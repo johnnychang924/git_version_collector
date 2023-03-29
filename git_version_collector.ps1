@@ -1,3 +1,4 @@
+# git rev-list --count <revision> 查詢git commit總量
 $git_address = "https://github.com/tensorflow/tensorflow.git" #git repo的複製地址
 $version_num = 25 							#總共要收集的版本數量
 $gap = 3000									#每個版本間要相差多少版本
@@ -10,4 +11,5 @@ for ($i = 1; $i -le $version_num; $i++){
 	git checkout head~$temp
 	Remove-Item "./.git" -Recurse -Force			#刪除.git檔案
 	cd ..
+	tar -cvf "../tensorflow_tar/$i.tar" "./$i"
 }
