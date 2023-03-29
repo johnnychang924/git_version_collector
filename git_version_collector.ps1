@@ -11,5 +11,4 @@ for ($i = 1; $i -le $version_num; $i++){
 	git checkout head~$temp
 	Remove-Item "./.git" -Recurse -Force			#刪除.git檔案
 	cd ..
-	tar -cvf "../tensorflow_tar/$i.tar" "./$i"
 }
